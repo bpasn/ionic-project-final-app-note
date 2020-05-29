@@ -14,8 +14,8 @@ import firebaseConfig from "./firebase"
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth"
 // import { AngularFireAuth } from '@angularfire2/auth';
-import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
-// import { UserService } from "./user.service";
+import { AngularFirestoreModule, FirestoreSettingsToken, AngularFirestore } from '@angular/fire/firestore';
+ import { UserService } from "./user.service";
 import { environment } from "src/environments/environment";
 // import * as firebase from 'firebase';
 
@@ -47,12 +47,13 @@ import { environment } from "src/environments/environment";
     AngularFireAuthModule,
     AngularFirestoreModule,
     HttpModule,
+    
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    // UserService,
+     UserService,
     // { provide: FirestoreSettingsToken, useValue: {} },
   ],
   bootstrap: [AppComponent],
