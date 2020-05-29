@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonTabs } from '@ionic/angular';
 
+
 @Component({
   selector: "app-tabs",
   templateUrl: "./tabs.page.html",
@@ -12,7 +13,7 @@ export class TabsPage implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    // this.tabs.select('feed');
+      // this.tabs.select('feed');
   }
 
 
