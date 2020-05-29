@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { IonTabs } from '@ionic/angular';
+
 import { Http } from "@angular/http";
+import { AngularFirestore } from '@angular/fire/firestore';
+import { UserService } from '../user.service';
+import { firestore } from 'firebase/app';
 
 @Component({
   selector: "app-uploader",
@@ -9,13 +12,35 @@ import { Http } from "@angular/http";
 })
 export class UploaderPage implements OnInit {
   imageURL: string
+  desc: string
+ 
 
-  // @ViewChild("tabs") tabs: IonTabs;
+  @ViewChild('fileButton') fileButton
 
-  constructor(public http: Http) {}
+  constructor(public http: Http,
+    public afstore: AngularFirestore,
+    public user: UserService) {}
 
   ngOnInit() {
     // this.tabs.select("Feed");
+  }
+  createPost(){
+    const image = this.imageURL
+    const desc = this.desc
+
+    this.afstore.doc(`users/${this.user.getUID()}`).update({
+      posts: firestore.FieldValue.arrayUnion({
+        image, 
+        desc
+      })
+    })
+
+
+
+  }
+
+  uploadFile(){
+    this.fileButton.nativeElement.click()
   }
 
   // UPLOAD IMG TO WEB UPLOADCARE
