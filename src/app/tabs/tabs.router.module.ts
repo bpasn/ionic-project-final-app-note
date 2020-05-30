@@ -8,14 +8,14 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       { path: 'feed', loadChildren: "../feed/feed.module#FeedPageModule" },
-      {
-        path: 'uploader',
-        loadChildren: "../uploader/uploader.module#UploaderPageModule",
-      },
-      {
-        path: 'profile',
-        loadChildren: "../profile/profile.module#ProfilePageModule",
-      },
+      {path: 'uploader',loadChildren: "../uploader/uploader.module#UploaderPageModule",},
+      {path: 'profile',loadChildren: "../profile/profile.module#ProfilePageModule",},
+      {path: 'post/:id', loadChildren: '../post/post.module#PostPageModule' },
+
+      // { path: 'add-note',loadChildren: ('../add-note/add-note.module#AddNotePageModule')},
+      // { path: 'view-note/:id',loadChildren: ('../view-note/view-note.module#ViewNotePageModule') },
+      // { path: 'update-note/:id', loadChildren: ('../update-note/update-note.module#UpdateNotePageModule') },
+
     //   { path: 'post/:id', loadChildren: "../post/post.module#PostPageModule" },
     //   {
     //     path: "edit-profile",
