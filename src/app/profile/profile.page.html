@@ -1,26 +1,30 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>profile</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>บัญชีผู้ใช้</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
 
-  <div id="images">
+  <app-loading *ngIf="!userPosts"></app-loading>
 
-    <div class="image" *ngFor="let post of (userPosts | async)?.posts">
+  <div id="images" *ngIf="(userPosts | async)?.posts as posts">
 
-    <ion-card>
+    <div class="image" *ngFor="let post of posts">
 
-      <ion-img src="https://ucarecdn.com/{{ post.image }}/-/crop/200x200/center/"></ion-img>
+    <ion-card (click)="goTo(post)">
+
+      <ion-img src="https://ucarecdn.com/{{ post }}/-/scale_crop/200x200/center/"></ion-img>
     
     </ion-card>
 
-    <ion-content>
+    <!-- <ion-content>
       <p> {{ post.desc }} </p>
-    </ion-content>
+    </ion-content> -->
 
  
 </div>
  </div>
 </ion-content>
+
+
