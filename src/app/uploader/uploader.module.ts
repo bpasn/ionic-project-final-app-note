@@ -8,12 +8,13 @@ import { UploaderPageRoutingModule } from './uploader-routing.module';
 
 import { UploaderPage } from './uploader.page';
 
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    UploaderPageRoutingModule
+    UploaderPageRoutingModule,
   ],
   declarations: [UploaderPage]
 })
