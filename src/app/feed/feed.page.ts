@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Note } from '../model/Note';
+import { FirebaseService } from '../service/firebase.service';
 
 @Component({
   selector: 'app-feed',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedPage implements OnInit {
 
-  constructor() { }
+  private notes: Observable<Note[]>;
 
-  ngOnInit() {
+  constructor(private fbService: FirebaseService) { }
+
+  ngOnInit(): void{
+    this.notes = this.fbService.getNotes();
   }
 
 }
