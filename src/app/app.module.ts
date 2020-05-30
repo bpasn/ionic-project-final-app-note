@@ -14,9 +14,13 @@ import firebaseConfig from "./firebase"
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth"
 // import { AngularFireAuth } from '@angularfire2/auth';
-import { AngularFirestoreModule, FirestoreSettingsToken, AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestoreModule,  AngularFirestore, SETTINGS } from '@angular/fire/firestore';
  import { UserService } from "./user.service";
 import { environment } from "src/environments/environment";
+import { AuthService } from './auth.service';
+import { LoadingComponent } from './loading/loading.component';
+import { ShareModule } from './share.module';
+
 // import * as firebase from 'firebase';
 
 // firebase.initializeApp(environment.firebase);
@@ -47,14 +51,15 @@ import { environment } from "src/environments/environment";
     AngularFireAuthModule,
     AngularFirestoreModule,
     HttpModule,
+    ShareModule,
     
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-     UserService,
-    // { provide: FirestoreSettingsToken, useValue: {} },
+     UserService,AuthService,
+    { provide: SETTINGS, useValue: {} },
   ],
   bootstrap: [AppComponent],
 })
