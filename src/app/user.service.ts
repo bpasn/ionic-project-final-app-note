@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core'
 import { AngularFireAuth } from '@angular/fire/auth'
-
+import { first } from 'rxjs/operators'
 
 interface user {
     username: string,
     uid: string
-
+    
 }
 
 @Injectable()
@@ -21,26 +21,33 @@ export class UserService {
         this.user = user
     }
 
-    getUID() {
-        if(!this.user) {
-            if(this.afAuth.auth.currentUser) {
-                const user = this.afAuth.auth.currentUser
+    getUsername(): string {
+        return this.user.username
+    }
+
+    
+
+   async isAuthenticated(){
+        if(this.user) return true
+
+        const user = await this.afAuth.authState.pipe(first()).toPromise()
+
+            if(user ) {
                 this.setUser({
-                    username: user.email.split('@')[0],// เช่น ggggg@gmail.com
+                    username: user.email.split('@')[0],
                     uid: user.uid
                 })
-                return user.uid
 
-            }else{
-                throw new Error("User not logged in")
+                return true
             }
 
-        } else{
-            return this.user.uid
-        }
+            return false
+    
+    }
 
 
-         return this.user.uid
+    getUID(): string {
+      return this.user.uid
     }
 
 }
