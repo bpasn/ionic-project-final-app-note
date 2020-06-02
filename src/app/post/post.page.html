@@ -1,7 +1,9 @@
 <ion-header>
   <ion-toolbar color="primary">
-  
-    <ion-title>post</ion-title>
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/tabs/profile"></ion-back-button>
+  </ion-buttons>
+    <ion-title>รูปภาพ</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -16,7 +18,7 @@
     <p>{{ postData.desc }}</p>
   </ion-card-content>
   <ion-item (click)="toggleHeart()">
-    <ion-icon [name]="heartType"></ion-icon>
+    <ion-icon [name]="heartType" ></ion-icon>
   </ion-item>
 </ion-card>
 
