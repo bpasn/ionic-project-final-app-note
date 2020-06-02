@@ -51,4 +51,5 @@ export class FirebaseService {
   deleteNote(id: string): Promise<void> {
     return this.noteCollection.doc(id).delete();
   }
+  
 }
