@@ -1,24 +1,34 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>
-      My Notes
+      โน๊ตของฉัน
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="title-block">
-    <div class="heading">My Notes</div>
+    <div class="heading" text-center>
+      <i>
+      <u>
+        My Notes
+      </u>
+    </i></div>
 
   </div>
-
 
   <!-- 
   <ion-searchbar></ion-searchbar> -->
 
   <ion-list>
     <ion-list-header>
-      <ion-label>Notes</ion-label>
+      <ion-label  class="ion-label" color="primary">
+        <i>
+          <u>
+            โน๊ต
+          </u>
+        </i>
+      </ion-label>
     </ion-list-header>
     <ion-item *ngFor="let note of (notes | async)">
       <ion-thumbnail slot="start">
@@ -29,7 +39,7 @@
         <h2>{{note.title}}</h2>
         <p>{{note.content}}</p>
       </ion-label>
-      <ion-button fill="outline" slot="end" [routerLink]="'/view-note/'+note.id">View</ion-button>
+      <ion-button fill="outline" slot="end" [routerLink]="'/view-note/'+note.id">ดูโน๊ต</ion-button>
     </ion-item>
   </ion-list>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
