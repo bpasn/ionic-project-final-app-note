@@ -10,15 +10,15 @@
 <ion-content>
   <ion-card color="secondary">
     <ion-card-header>
-      <ion-card-subtitle>{{note.createdAt | date: 'short'}}</ion-card-subtitle>
+      <ion-card-subtitle class="font">{{note.createdAt | date: 'short'}}</ion-card-subtitle>
       <ion-card-title>{{note.title}}</ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
-      <p align="justify">{{note.content}}</p>
+      <p align="justify" class="font" >{{note.content}}</p>
       <br>
-      <ion-button slot="start" color="success" [routerLink]="'/update-note/' + note.id">Edit</ion-button>
-      <ion-button slot="end" color="danger" (click)="deleteNote()">Delete</ion-button>
+      <ion-button slot="start" color="success" [routerLink]="'/update-note/' + note.id">แก้ไข</ion-button>
+      <ion-button slot="end" color="danger" (click)="deleteNote()">ลบ</ion-button>
     </ion-card-content>
 
   </ion-card>
