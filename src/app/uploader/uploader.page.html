@@ -22,7 +22,8 @@
 
 <ion-card-content>
   <ion-textarea placeholder="เขียนอะไรสักอย่างเกี่ยวกับรูปของคุณ!" [(ngModel)]="desc"></ion-textarea>
-  <ion-button shape="round" color="primary" (click)="createPost()">POST</ion-button>
+  <ion-button slot="start" color="primary" (click)="createPost()">เพิ่มไปยังบัญชีของฉัน</ion-button>
+  <ion-button slot="end" color="danger" Href="/tabs/uploader">ยกเลิก</ion-button>
 </ion-card-content>
 </ion-card>
   
