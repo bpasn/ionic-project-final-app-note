@@ -3,32 +3,43 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-title>Register</ion-title>
+    <ion-title>สมัครสมาชิก</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
+  <div class="title-block">
+    <div class="heading" text-center>
+      <i>
+  
+        <!-- สมัคสมาชิก -->
+  
+      </i>
+    </div>
+  
+  </div>
+
 <ion-list>
 
   <ion-item>
-    <ion-label position="floating">Username</ion-label>
+    <ion-label position="floating">ชื่อผู้ใช้</ion-label>
     <ion-input type="text" [(ngModel)]="username"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label position="floating">Password</ion-label>
+    <ion-label position="floating">รหัสผ่าน</ion-label>
     <ion-input type="password" [(ngModel)]="password"></ion-input>
   </ion-item>
 
     <ion-item>
-    <ion-label position="floating">Confirm Password</ion-label>
+    <ion-label position="floating">ยืนยันรหัสผ่าน</ion-label>
     <ion-input type="password" [(ngModel)]="cpassword"></ion-input>
   </ion-item>
 
-</ion-list>
+</ion-list><br><br>
 
-<ion-button fill="solid" expand="block" color="dark" (click)="register()">Login</ion-button>
+<ion-button fill="solid" expand="block" color="primary" (click)="register()">สมัครสมาชิก</ion-button>
 
 
 
