@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core'
 import { AngularFireAuth } from '@angular/fire/auth'
 import { first } from 'rxjs/operators'
+import { Observable } from 'rxjs';
+import { AngularFirestoreCollection } from '@angular/fire/firestore';
 
 interface user {
     username: string,
@@ -12,6 +14,9 @@ interface user {
 export class UserService {
 
     private user: user
+    private noteCollection: AngularFirestoreCollection;
+ 
+   
     
     constructor( private afAuth: AngularFireAuth) {
 
@@ -49,5 +54,9 @@ export class UserService {
     getUID(): string {
       return this.user.uid
     }
+
+    // deletePost(id: string): Promise<void> {
+    //     return this.noteCollection.doc(id).delete();
+    // }
 
 }
