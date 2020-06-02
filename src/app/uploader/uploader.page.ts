@@ -50,7 +50,7 @@ async createPost(){
     this.desc =""
 
     const alert = await this.alertController.create({
-      header: 'Done',
+      header: 'สำเร็จ',
       message: 'อัพโหลดสำเร็จ',
       buttons: ['เสร็จ']
     })
