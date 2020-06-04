@@ -57,7 +57,7 @@ export class LoginPage implements OnInit {
           uid: res.user.uid
         })
         this.SuccessOrError('เข้าสู่ระบบสำเร็จ', 'ยินดีต้อนรับ')
-        this.router.navigate(['/tabs'])
+        this.router.navigate(['/tabs/feed'])
         
       }
 
@@ -67,6 +67,12 @@ export class LoginPage implements OnInit {
       if (err.code === "auth/user-not-found") {
         
         this.SuccessOrError('เกิดข้อผิดพลาด', 'ไม่พบบัญชีผู้ใช้')
+
+      }
+
+      if (err.code === "auth/wrong-password") {
+
+        this.SuccessOrError('เกิดข้อผิดพลาด', 'รหัสผ่านไม่ถูกต้อง')
 
       }
 
