@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonTabs } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,11 +11,15 @@ import { IonTabs } from '@ionic/angular';
 export class TabsPage implements OnInit {
   @ViewChild("tabs") tabs: IonTabs;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
       // this.tabs.select('feed');
   }
+
+  // logout (){
+  //   this.router.navigate(['/login'])
+  // }
 
 
 }
