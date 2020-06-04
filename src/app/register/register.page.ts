@@ -72,7 +72,7 @@ export class RegisterPage implements OnInit {
       })
 
       this.presentAlert('สำเร็จ', 'เข้าสู่ระบบเรียบร้อย')
-      this.router.navigate(['/tabs'])
+      this.router.navigate(['/tabs/feed'])
 
       // ยังไม่ได้ใช้ Alert
       // this.showtAlert("Success!", "Welcome board")
@@ -82,6 +82,8 @@ export class RegisterPage implements OnInit {
       console.dir(error);
       if (error.code === "auth/weak-password")
         this.presentAlert('เกิดข้อผิดพลาด', 'รหัสผ่าน "6" ตัวขึ้นไป ')
+      if (error.code === "auth/invalid-email")
+        this.presentAlert('ผิดพลาด', 'โปรดกรอกข้อมูล')
 
     }
 
