@@ -1,3 +1,7 @@
+
+//ไฟล์ NOTE คำสั่ง รับขส่งค่า
+
+
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Note } from '../model/Note';
@@ -9,6 +13,7 @@ import { map, take } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class FirebaseService {
+  
   private notes: Observable<Note[]>;
   private noteCollection: AngularFirestoreCollection<Note>;
 
