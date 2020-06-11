@@ -17,8 +17,8 @@
     <ion-card-content>
       <p align="justify" class="font" >{{note.content}}</p>
       <br>
-      <ion-button slot="start" color="success" [routerLink]="'/update-note/' + note.id">แก้ไข</ion-button>
-      <ion-button slot="end" color="danger" (click)="deleteNote()">ลบ</ion-button>
+      <ion-button  shape="round"  slot="start" color="success" [routerLink]="'/update-note/' + note.id">แก้ไข</ion-button>
+      <ion-button   shape="round" slot="end" color="danger" (click)="deleteNote()">ลบ</ion-button>
     </ion-card-content>
 
   </ion-card>
