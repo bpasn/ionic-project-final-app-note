@@ -14,7 +14,7 @@ export class AddNotePage implements OnInit {
   note: Note = {
     title: '',
     content: '',
-    createdAt: new Date().getTime()
+    createdAt: new Date().getTime()  //วัน/เดือน/ปี -- วัน/เวลา
   };
 
   constructor(
@@ -27,6 +27,7 @@ export class AddNotePage implements OnInit {
   ngOnInit() {
   }
 
+  // Add Note
   addNote() {
     this.fbService.addNote(this.note).then(() => {
       this.router.navigateByUrl('/tabs/feed');
