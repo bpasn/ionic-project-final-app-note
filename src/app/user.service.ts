@@ -2,7 +2,10 @@ import { Injectable } from '@angular/core'
 import { AngularFireAuth } from '@angular/fire/auth'
 import { first } from 'rxjs/operators'
 import { Observable } from 'rxjs';
-import { AngularFirestoreCollection } from '@angular/fire/firestore';
+// import { AngularFirestoreCollection } from '@angular/fire/firestore';
+import { Note } from './model/Note';
+import { AngularFirestore, AngularFirestoreCollection, DocumentReference } from '@angular/fire/firestore';
+import { map, take } from 'rxjs/operators';
 
 interface user {
     username: string,
@@ -16,11 +19,16 @@ export class UserService {
     private user: user
     private noteCollection: AngularFirestoreCollection;
  
+  
+
    
     
-    constructor( private afAuth: AngularFireAuth) {
+    constructor(private afAuth: AngularFireAuth, private afs: AngularFirestore) {
 
+      
     }
+
+   
 
     setUser(user: user) {
         this.user = user
