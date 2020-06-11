@@ -20,6 +20,8 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Note } from '../model/Note';
 import { ActivatedRoute, Router } from '@angular/router';
+
+
 import { FirebaseService } from '../service/firebase.service';
 
 
