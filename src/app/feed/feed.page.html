@@ -21,10 +21,12 @@
   <ion-searchbar></ion-searchbar> -->
 
   <ion-list>
-    <ion-list-header>
-      <ion-label  class="ion-label" color="danger">
-     
-      </ion-label>
+    <ion-list-header color="dark">
+      
+          <h4 color="light" class="text-center">
+            <i>Note</i> 
+          </h4>
+      
     </ion-list-header>
     <ion-item *ngFor="let note of (notes | async)">
       <ion-thumbnail slot="start">
