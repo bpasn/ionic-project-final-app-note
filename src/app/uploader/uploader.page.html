@@ -14,7 +14,10 @@
 
       <input type="file" *ngIf="!imageURL" (change)="fileChanged($event)" class="filebtn" #fileButton />
 
-<ion-button shape="round" color="primary" (click)="uploadFile()" *ngIf="!imageURL" fill="outline">อัพโหลด</ion-button>
+<ion-button shape="round" color="danger" (click)="uploadFile()" *ngIf="!imageURL" fill="outline">
+<ion-icon name="cloud-upload-outline" color="danger"></ion-icon>
+ <p color="primary">อัพโหลด</p> 
+</ion-button>
     
 <ion-card *ngIf="imageURL">
       <img src="https://ucarecdn.com/{{ imageURL }}/" />
@@ -22,8 +25,8 @@
 
 <ion-card-content>
   <ion-textarea placeholder="เขียนอะไรสักอย่างเกี่ยวกับรูปของคุณ!" [(ngModel)]="desc"></ion-textarea>
-  <ion-button slot="start" color="primary" (click)="createPost()">เพิ่มไปยังบัญชีของฉัน</ion-button>
-  <ion-button slot="end" color="danger" Href="/tabs/uploader">ยกเลิก</ion-button>
+  <ion-button slot="start" shape="round" color="primary" (click)="createPost()" fill="outline">เพิ่มไปยังบัญชีของฉัน</ion-button>
+  <ion-button slot="end" color="danger" shape="round" fill="outline" Href="/tabs/uploader">ยกเลิก</ion-button>
 </ion-card-content>
 </ion-card>
   
