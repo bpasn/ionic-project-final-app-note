@@ -32,6 +32,7 @@ export class LoginPage implements OnInit {
       header: title,
       message: content,
       buttons: ['ตกลง']
+      
     })
 
     await alert.present()
@@ -48,7 +49,7 @@ export class LoginPage implements OnInit {
     }
     try {
       // kind of a hack.
-      const res = await this.afAuth.auth.signInWithEmailAndPassword(username + "@codedamn.com",password)
+      const res = await this.afAuth.auth.signInWithEmailAndPassword(username + "@note.com",password)
 
 
       if(res.user) {
