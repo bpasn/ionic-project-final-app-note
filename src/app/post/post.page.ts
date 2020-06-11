@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { firestore } from 'firebase/app';
 import { UserService } from '../user.service';
-
+// import { FirebaseService } from '../service/firebase.service';
 
 @Component({
   selector: 'app-post',
@@ -11,6 +11,7 @@ import { UserService } from '../user.service';
   styleUrls: ['./post.page.scss'],
 })
 export class PostPage implements OnInit {
+
 
 postID: string
 post
@@ -32,7 +33,7 @@ post
   }
 
   // deletePost(){
-  //   this.afs.deletepost(this.postID)
+  //   this.afs.img(this.postID)
   // }
 
   
