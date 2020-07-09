@@ -61,12 +61,14 @@ export class RegisterPage implements OnInit {
       console.log(res)
 
       this.afstore.doc(`users/${res.user.uid}`).set({
-        username
+        username,
+        password
 
       })
 
       this.user.setUser({
         username,
+
         uid: res.user.uid
 
       })
