@@ -50,7 +50,7 @@ export class FirebaseService {
   }
 
   updateNote(note: Note): Promise<void> {
-    return this.noteCollection.doc(note.id).update({ title: note.title, content: note.content });
+    return this.noteCollection.doc(note.id).update({ title: note.title, content: note.content, createdAt: note.createdAt });
   }
 
   deleteNote(id: string): Promise<void> {
