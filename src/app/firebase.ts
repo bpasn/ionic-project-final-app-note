@@ -1,11 +1,11 @@
 const config = {
-  apiKey: "AIzaSyA4szSmHalAmep8ae2Uw18N5Uey2TwvGPE",
-  authDomain: "fir-9b649.firebaseapp.com",
-  databaseURL: "https://fir-9b649.firebaseio.com",
-  projectId: "fir-9b649",
-  storageBucket: "fir-9b649.appspot.com",
-  messagingSenderId: "836209443391",
-  appId: "1:836209443391:web:d9c3b53ebffaddb7d92e8a",
-  measurementId: "G-B2WWZVE65X",
+  apiKey: "AIzaSyB78ajKhuaBrBNjSu4W9ZMUJXBJ6zXpwTM",
+  authDomain: "note-9334e.firebaseapp.com",
+  databaseURL: "https://note-9334e.firebaseio.com",
+  projectId: "note-9334e",
+  storageBucket: "note-9334e.appspot.com",
+  messagingSenderId: "905042377422",
+  appId: "1:905042377422:web:f6d76dbedaa8fbe8b96e9f",
+  measurementId: "G-RF8NEQYFGY"
 };
 export default config
