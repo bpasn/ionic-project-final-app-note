@@ -9,12 +9,15 @@ import { map, take } from 'rxjs/operators';
 
 interface user {
     username: string,
-    uid: string
+    uid: string,
+    
     
 }
 
+
 @Injectable()
 export class UserService {
+
 
     private user: user
     private noteCollection: AngularFirestoreCollection;
