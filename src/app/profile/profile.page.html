@@ -6,7 +6,7 @@
 
 <ion-content padding>
 
-  <app-loading *ngIf="!userPosts"></app-loading>
+  <app-loading *ngIf="!usersPosts"></app-loading>
 
   <div id="images" *ngIf="(userPosts | async)?.posts as posts">
 
@@ -17,8 +17,8 @@
       <ion-img src="https://ucarecdn.com/{{ post }}/-/scale_crop/200x200/center/"></ion-img>
     
     </ion-card>
-
-    <!-- <ion-content>
+<!-- 
+    <ion-content>
       <p> {{ post.desc }} </p>
     </ion-content> -->
 
