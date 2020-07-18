@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { UploaderPageRoutingModule } from './uploader-routing.module';
 
 import { UploaderPage } from './uploader.page';
+import { ShareModule } from '../share.module';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { UploaderPage } from './uploader.page';
     FormsModule,
     IonicModule,
     UploaderPageRoutingModule,
+    ShareModule
   ],
   declarations: [UploaderPage]
 })
