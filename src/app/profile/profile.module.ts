@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ProfilePageRoutingModule } from './profile-routing.module';
 
 import { ProfilePage } from './profile.page';
+import { ShareModule } from '../share.module';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { ProfilePage } from './profile.page';
     FormsModule,
     IonicModule,
     ProfilePageRoutingModule,
+    ShareModule,
   
   ],
   declarations: [ProfilePage]
