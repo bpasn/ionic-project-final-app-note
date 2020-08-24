@@ -40,9 +40,10 @@ async createPost(){
     })
 
     this.afstore.doc(`posts/${image}`).set({
+      image,
       desc,
       author: this.user.getUsername(),
-      likes: []
+   
     })
 
     this.busy = false
