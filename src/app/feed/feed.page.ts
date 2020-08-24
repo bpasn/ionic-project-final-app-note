@@ -14,7 +14,7 @@ import { FirebaseService } from '../service/firebase.service';
 export class FeedPage implements OnInit {
 
   private notes: Observable<Note[]>;
-// private fbService: FirebaseService
+
   constructor(private fbService: FirebaseService) { }
 
   ngOnInit(): void{
