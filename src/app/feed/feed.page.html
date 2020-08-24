@@ -17,11 +17,9 @@
 
   </div>
 
-  <!-- 
-  <ion-searchbar></ion-searchbar> -->
-
+ 
   <ion-list>
-    <ion-list-header color="dark">
+    <ion-list-header color="light">
       
           <h4 color="light" class="text-center">
             <i>Note</i> 
@@ -30,7 +28,6 @@
     </ion-list-header>
     <ion-item *ngFor="let note of (notes | async)">
       <ion-thumbnail slot="start">
-        <!-- <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw=="> -->
         <img src="assets/note.jpg">
       </ion-thumbnail>
       <ion-label>
