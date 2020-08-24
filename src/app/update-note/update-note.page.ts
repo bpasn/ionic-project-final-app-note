@@ -32,6 +32,7 @@ import { FirebaseService } from '../service/firebase.service';
 })
 export class UpdateNotePage implements OnInit, AfterViewInit {
   note: Note = {
+    author: '',
     id: '',
     title: '',
     content: '',

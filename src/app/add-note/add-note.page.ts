@@ -14,6 +14,7 @@ import { firestore } from 'firebase';
 })
 export class AddNotePage implements OnInit {
   note: Note = {
+    author: this.user.getUsername(),
     title: '',
     content: '',
     createdAt: new Date().getTime()  //วัน/เดือน/ปี -- วัน/เวลา

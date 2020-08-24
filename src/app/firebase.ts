@@ -1,5 +1,5 @@
 const config = {
-  apiKey: "AIzaSyB78ajKhuaBrBNjSu4W9ZMUJXBJ6zXpwTM",
+  apiKey: "AIzaSyALE75_bG6W1p65Q1gZtvvRGy4y4re6keQ",
   authDomain: "note-9334e.firebaseapp.com",
   databaseURL: "https://note-9334e.firebaseio.com",
   projectId: "note-9334e",
