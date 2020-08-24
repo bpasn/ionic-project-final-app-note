@@ -1,11 +1,11 @@
 const config = {
-  apiKey: "AIzaSyALE75_bG6W1p65Q1gZtvvRGy4y4re6keQ",
-  authDomain: "note-9334e.firebaseapp.com",
-  databaseURL: "https://note-9334e.firebaseio.com",
-  projectId: "note-9334e",
-  storageBucket: "note-9334e.appspot.com",
-  messagingSenderId: "905042377422",
-  appId: "1:905042377422:web:f6d76dbedaa8fbe8b96e9f",
-  measurementId: "G-RF8NEQYFGY"
+  apiKey: "AIzaSyB7xqjE1ZBjgWOtNQIAQrg7HPaJyB4nrQw",
+  authDomain: "ionic-a5bfe.firebaseapp.com",
+  databaseURL: "https://ionic-a5bfe.firebaseio.com",
+  projectId: "ionic-a5bfe",
+  storageBucket: "ionic-a5bfe.appspot.com",
+  messagingSenderId: "138199494119",
+  appId: "1:138199494119:web:97126784fdd5a60ece2142",
+  measurementId: "G-R36STS1KVH"
 };
 export default config
