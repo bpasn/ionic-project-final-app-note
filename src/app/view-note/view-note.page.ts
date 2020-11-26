@@ -31,7 +31,8 @@ export class ViewNotePage implements OnInit, AfterViewInit {
     id: '',
     title: '',
     content: '',
-    createdAt: ''
+    createdAt: '',
+    author: ''
   };
 
   constructor(private activatedRoute: ActivatedRoute, private fbService: FirebaseService, private router: Router) { }

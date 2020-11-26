@@ -14,6 +14,7 @@ import { firestore } from 'firebase';
 })
 export class AddNotePage implements OnInit {
   note: Note = {
+    author: this.user.getUsername(),
     title: '',
     content: '',
     createdAt: new Date().getTime()  //วัน/เดือน/ปี -- วัน/เวลา
@@ -39,27 +40,6 @@ export class AddNotePage implements OnInit {
     }, err => {
     });
   }
-  // async crearenote(){
-  //   this.busy = true
-  //   const notes = this.note
-  //   // const desc = this.desc
 
-  //   this.afstore.doc(`users/${this.user.getUID()}`).update({
-  //     posts: firestore.FieldValue.arrayUnion(notes) // [{ แสดงรูป หรืออะไรก็ได้ในฟังชันนี้ }]
-  //   })
-
-  //   this.afstore.doc(`notes/${notes}`).set({
-     
-  //     author: this.user.getUsername(),
-      
-
-  //   })
-
-  //   this.busy = false
-  //   // this.note = ""
-    
-  //   this.router.navigate(['/tabs/feed'])
-
-  // }
 
 }

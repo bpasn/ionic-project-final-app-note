@@ -6,9 +6,9 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Note } from '../model/Note';
 import { AngularFirestore, AngularFirestoreCollection, DocumentReference } from '@angular/fire/firestore';
-import { map, take } from 'rxjs/operators';
-
-
+import { map, take, filter } from 'rxjs/operators';
+import { UserService } from '../user.service';
+import { firestore } from 'firebase/app';
 @Injectable({
   providedIn: 'root'
 })
@@ -17,7 +17,10 @@ export class FirebaseService {
   private notes: Observable<Note[]>;
   private noteCollection: AngularFirestoreCollection<Note>;
 
-  constructor(private afs: AngularFirestore) {
+  constructor(
+    private afs: AngularFirestore,
+    public user: UserService
+  ) {
 
     this.noteCollection = this.afs.collection<Note>('notes');
     this.notes = this.noteCollection.snapshotChanges().pipe(
@@ -26,13 +29,13 @@ export class FirebaseService {
           const data = a.payload.doc.data();
           const id = a.payload.doc.id;
           return { id, ...data };
-        });
+        }).filter(item=>item.author === this.user.getUsername());
       })
     );
   }
 
   getNotes(): Observable<Note[]> {
-    return this.notes;
+    return this.notes
   }
 
   getNote(id: string): Observable<Note> {
@@ -46,7 +49,17 @@ export class FirebaseService {
   }
 
   addNote(note: Note): Promise<DocumentReference> {
-    return this.noteCollection.add(note);
+    return new Promise(async(resolve, reject) => {
+      try {
+        const res = await this.noteCollection.add(note);
+        this.afs.doc(`users/${this.user.getUID()}`).update({
+          notes: firestore.FieldValue.arrayUnion(res.id)
+        })
+        resolve(res)
+      } catch (error) {
+        reject(error)
+      }
+    })
   }
 
   updateNote(note: Note): Promise<void> {
